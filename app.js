@@ -21,6 +21,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/chat', chatRouter);
+const path = require('path'); // Đảm bảo đã có dòng này ở đầu file app.js
+
+// Ép Express định vị chuẩn thư mục views và public trên môi trường Cloud
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
