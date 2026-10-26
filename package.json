@@ -5,9 +5,8 @@
   "private": true,
   "scripts": {
   "start": "node app.js"
-},
 
-    "dev": "nodemon ./bin/www --watch ./bin --watch ./views --watch ./public --watch ./routes --watch ./app.js --watch ./package.json"
+   "dev": "nodemon ./bin/www --watch ./bin --watch ./views --watch ./public --watch ./routes --watch ./app.js --watch ./package.json"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
