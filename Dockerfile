@@ -4,7 +4,16 @@ FROM node:18-alpine AS builder
 # Create app directory
 WORKDIR /usr/src/app
 
-# Copy package files
+COPY package*.json ./
+
+# Cài đặt Git, Curl và công cụ Bun cần thiết cho môi trường Linux Alpine
+RUN apk add --no-cache git curl bash && \
+    curl -fsSL https://bun.sh | bash && \
+    ln -s /root/.bun/bin/bun /usr/local/bin/bun
+
+# Tiến hành cài đặt thư viện dự án và kích hoạt biên dịch lõi zca-js bằng Bun
+RUN npm install && cd node_modules/zca-js && npm install && bun run build && cd ../..
+
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies)
