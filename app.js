@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Ép trang chủ trả về giao diện login hoặc index
 app.get('/', (req, res) => {
-  res.render('index'); // Hoặc đổi thành 'login' tùy thuộc vào tên file .ejs của bạn trong thư mục views
+  res.render('login'); // Hoặc đổi thành 'login' tùy thuộc vào tên file .ejs của bạn trong thư mục views
 });
 
 
