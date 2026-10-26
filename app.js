@@ -44,6 +44,15 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+// Thử nghiệm gọi trực tiếp trang đăng nhập login.ejs khi vào trang chủ
+app.get('/', (req, res) => {
+  res.render('login'); 
+});
+
+// Thử nghiệm gọi trang index.ejs nếu người dùng vào đường dẫn /index
+app.get('/index', (req, res) => {
+  res.render('index');
+});
 
 module.exports = app;
 const PORT = process.env.PORT || 10000;
