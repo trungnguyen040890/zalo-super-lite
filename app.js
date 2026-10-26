@@ -50,8 +50,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.render('index'); // Hoặc đổi thành 'login' tùy thuộc vào tên file .ejs của bạn trong thư mục views
 });
-const PORT = process.env.PORT || 10000;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-});
+
 
