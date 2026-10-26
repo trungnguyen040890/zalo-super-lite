@@ -11,7 +11,8 @@ COPY package*.json ./
 # Cài đặt công cụ Git cho hệ điều hành Alpine Linux rứt gọn
 RUN apk add --no-cache git
 
-RUN npm install
+RUN npm install && cd node_modules/zca-js && npm install && npm run build && cd ../..
+
 
 
 # Copy source code
