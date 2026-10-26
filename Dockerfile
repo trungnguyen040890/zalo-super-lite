@@ -8,6 +8,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install all dependencies (including devDependencies)
+# Cài đặt công cụ Git cho hệ điều hành Alpine Linux rứt gọn
+RUN apk add --no-cache git
+
 RUN npm install
 
 
