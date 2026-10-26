@@ -43,4 +43,11 @@ const PORT = process.env.PORT || 10000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
+// Đảm bảo Express phục vụ các file tĩnh trong thư mục public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ép trang chủ trả về giao diện login hoặc index
+app.get('/', (req, res) => {
+  res.render('index'); // Hoặc đổi thành 'login' tùy thuộc vào tên file .ejs của bạn trong thư mục views
+});
 
